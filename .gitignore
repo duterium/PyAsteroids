@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+#Bootdev
+game_state.jsonl
