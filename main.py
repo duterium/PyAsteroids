@@ -4,6 +4,7 @@ from logger import log_state
 from player import *
 from asteroidfield import *
 from asteroid import *
+from shot import *
 from logger import log_event
 import sys
 
@@ -21,6 +22,7 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
 
     Player.containers = (updatable, drawable)
@@ -30,6 +32,8 @@ def main():
     A_field = AsteroidField()
 
     Asteroid.containers = (asteroids, updatable, drawable)
+
+    Shot.containers = (shots, drawable, updatable)
 
 
     while True:
