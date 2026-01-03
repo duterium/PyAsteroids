@@ -46,6 +46,16 @@ def main():
         # player.draw(screen)
         updatable.update(dt)
         for a in asteroids :
+            boom = False
+            for s in shots :
+                if s.collides_with(a) :
+                    log_event("asteroid_shot")
+                    s.kill()
+                    a.kill()
+                    boom = True
+                    continue
+            if boom:
+                continue    
             if player.collides_with(a) :
                 log_event("player_hit")
                 print("Game over!")
